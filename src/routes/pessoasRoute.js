@@ -14,8 +14,13 @@ router.get("/pessoas/todos", (req, res) =>
 router.get("/pessoas/:id", (req, res) =>
   pessoaController.pegaUmPorId(req, res),
 );
+
 router.get("/pessoas/:estudanteId/matriculas", (req, res) =>
   pessoaController.pegaMatriculasAtivas(req, res),
+);
+
+router.get("/pessoas/:estudanteId/matriculas/:id", (req, res) =>
+  pessoaController.pegaUm(req, res),
 );
 
 router.get("/pessoas/:estudanteId/matriculas", (req, res) =>
