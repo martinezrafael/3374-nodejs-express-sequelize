@@ -27,8 +27,16 @@ router.get("/pessoas/:estudante_id/matriculas", (req, res) =>
   pessoaController.pegaTodasAsMatriculas(req, res),
 );
 
+router.get("/pessoas/:estudante_id/matriculas/confirmadas", (req, res) =>
+  matriculaController.pegaMatriculasPorEstudante(req, res),
+);
+
 router.get("/pessoas/:estudante_id/matriculas/todos", (req, res) =>
   pessoaController.pegaMatriculas(req, res),
+);
+
+router.get("/pessoas/matriculas/lotadas", (req, res) =>
+  matriculaController.pegaCursosLotados(req, res),
 );
 router.post("/pessoas", (req, res) => pessoaController.criaNovo(req, res));
 router.put("/pessoas/:id", (req, res) => pessoaController.atualiza(req, res));
